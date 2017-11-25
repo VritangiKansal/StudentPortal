@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body onload="initData()">
+        <div class="jumbotron" align="center">
+            <p id="logo" class="text-center"><bold>Student's Testimony</bold></p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="panel panel-default">
+                    <table class="table table-fixed">
+                        <thead>
+                            <tr>
+                                <th class="col-xs-2"><i class="glyphicon glyphicon-th-list"></i> Roll No.</th><th class="col-xs-2"><i class="glyphicon glyphicon-user"></i> Name</th><th class="col-xs-2"><i class="glyphicon glyphicon-calendar"></i> D.O.B</th><th class="col-xs-2"><i class="glyphicon glyphicon-book"></i> Stream</th><th class="col-xs-2"><i class="glyphicon glyphicon-triangle-bottom"></i> Passout year</th><th class="col-xs-2"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tab"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal" title="Click to add new entry"><span class="glyphicon glyphicon-plus"></span></button>
+                  <button type="button" class="btn btn-danger" onclick="deleteSelect()" title="click to delete selected rows"><span class="glyphicon glyphicon-minus"></span></button>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Enter details:</h4>
+                    </div>
+                    <div class="modal-body1">
+                        <form>
+                            <div class="form-group">
+                                <label for="rollno" class="cols-sm-2 control-label">Roll No.</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-th-list" aria-hidden="true"></i></span>
+                                        <input type="number" class="form-control" name="rollno" id="rollno"  placeholder="Enter your Roll No."/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="cols-sm-2 control-label">Name</label>
+                                    <div class="cols-sm-10">
+                                        <div class="input-group">
+                                          <span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+                                          <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+                                        </div>
+                                      </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="dob" class="cols-sm-2 control-label">D.O.B.</label>
+                                    <div class="cols-sm-10">
+                                        <div class="input-group">
+                                          <span class="input-group-addon"><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i></span>
+                                          <input type="date" class="form-control" name="dob" id="dob"  placeholder="Enter your D.O.B."/>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="stream" class="cols-sm-2 control-label">Stream</label>
+                                    <div class="cols-sm-10">
+                                        <div class="input-group">
+                                          <span class="input-group-addon"><i class="glyphicon glyphicon-book" aria-hidden="true"></i></span>
+                                          <input type="text" class="form-control" name="stream" id="stream"  placeholder="Enter your Stream"/>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass" class="cols-sm-2 control-label">Passout Year</label>
+                                    <div class="cols-sm-10">
+                                      <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></i></span>
+                                        <input type="number" class="form-control" name="pass" id="pass"  placeholder="Enter your Passout Year"/>
+                                      </div>
+                                    </div>
+                            </div>
+                            <div class="form-group ">
+                                <button type="button" class="btn btn-primary btn-lg btn-block login-button" onclick="addData()">Register</button>
+                            </div>
+                        </form>
+                      
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pp()">Close</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="myModal1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Edit details:</h4>
+                        </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>
